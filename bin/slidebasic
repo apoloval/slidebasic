@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "slidebasic"
+
+puts 'Welcome to Slidebasic!'
