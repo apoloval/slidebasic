@@ -1,4 +1,79 @@
 #!/usr/bin/env ruby
-require "slidebasic"
 
-puts 'Welcome to Slidebasic!'
+require 'slidebasic'
+
+basic = Slidebasic::BasicProg.new
+
+basic.begin_slide
+basic.define_cover('Artemisa MSX Computer System', subtitle: 'MSX Labs - Nov. 2018')
+basic.end_slide
+
+basic.begin_slide(title: 'Contenido')
+basic.define_item('¿Qué es (y qué no) Artemisa?')
+basic.define_item('¿Por qué Artemisa?')
+basic.define_item('Características técnicas')
+basic.define_item('Estado del proyecto')
+basic.define_item('Preguntas')
+basic.end_slide
+
+basic.begin_slide(title: '¿Qué es (y qué no) Artemisa?')
+basic.define_item('Ordenador de 8 bits compatible con la norma MSX-1 (otro más)')
+basic.define_item('Basado en circuitos integrados (chips de toda la vida)')
+basic.define_item('No lleva ni una sola FPGA')
+basic.define_item('Hardware como se hacía en los años 80')
+basic.end_slide
+
+basic.begin_slide(title: '¿Por qué Artemisa?')
+basic.define_section('Hechos')
+basic.define_item('Todo el mundo está haciendo hardware con FPGAs')
+basic.define_item('Las FPGAs son Una Buena Cosa')
+basic.define_item('Las FPGAs son emuladores de hardware hechos con hardware')
+basic.define_section('Opiniones')
+basic.define_item('Las FPGAs nos alejan (un poco) del hardware original')
+basic.define_item('Es más bonito diseñar un MSX con componentes originales')
+basic.define_section('Realidades')
+basic.define_item('Me apetecía crear mi propio ordenador')
+basic.end_slide
+
+basic.begin_slide(title: 'Características técnicas')
+basic.define_section('Placa base')
+basic.define_item('Tecnología CMOS compatible con TTL')
+basic.define_item('Z80 de hasta 20Mhz (reloj capado a 3.58Mhz en Mk.I)')
+basic.define_item('64KB de RAM estática (pero sin pila, ojo)')
+basic.define_item('32KB de ROM Flash (cableados, podría tener hasta 256KB)')
+basic.define_item('Teclado PS2')
+basic.define_item('2 ranudas de cartucho')
+basic.define_item('2 puertos de joystick')
+basic.define_item('Entrada y salida de cassette')
+basic.define_item('**NO** tiene ni puerto de impresora ni serie')
+basic.end_slide
+
+basic.begin_slide(title: 'Características técnicas')
+basic.define_section('Tarjeta gráfica independiente')
+basic.define_item('Se comunica por un slot de expansión de bus')
+basic.define_item('Entrada de sonido desde la placa base')
+basic.define_item('GFX-9918, NTSC a 60Hz con salida S-Video')
+basic.define_item('GFX-9929, PAL a 50Hz con salida RGB (por diseñar, ¿alguien se anima?)')
+basic.define_item('GFX-9990, ... ¿quién sabe?')
+basic.end_slide
+
+basic.begin_slide(title: 'Estado del proyecto')
+basic.define_section('¿Cómo vamos?')
+basic.define_item('PCBs diseñadas')
+basic.define_item('Teclado probado y funcionando')
+basic.define_item('GFX-9918 probada y funcionando')
+basic.define_item('Faltan probar muuuuuchas más cosas')
+basic.define_section('¿Y para cuando?')
+basic.define_item("<<¡La cena estará lista cuando esté lista!>>")
+basic.define_section('¿Y luego qué?')
+basic.define_item("No tengo ni la más remota idea")
+basic.end_slide
+
+basic.begin_slide(title: '¿Preguntas?')
+basic.define_section('Website')
+basic.define_item('http://github.com/apoloval/artemisa')
+basic.define_section('Twitter')
+basic.define_item('https://twitter.com/apolovald')
+basic.end_slide(is_final: true)
+
+basic.print_lines

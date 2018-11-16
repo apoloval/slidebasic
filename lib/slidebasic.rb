@@ -1,5 +1,6 @@
-require "slidebasic/version"
+require 'slidebasic/basicprog'
+require 'slidebasic/version'
 
+# Slidebasic module
 module Slidebasic
-  # Your code goes here...
 end
