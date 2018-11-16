@@ -8,31 +8,6 @@ input_file = ARGV[0]
 input_doc = YAML.load_file(input_file)
 
 basic = Slidebasic::BasicProg.new
-
-basic.begin_slide
-basic.define_cover(input_doc['title'], subtitle: input_doc['subtitle'])
-basic.end_slide
-
-def process_content(basic, content)
-  item = content['item']
-  basic.define_item(item) if item
-  section = content['section']
-  if section
-    basic.define_section(section)
-    section_contents = content['content'] || []
-    section_contents.each do |section_content|
-      process_content(basic, section_content) if section_content
-    end
-  end
-end
-
-slides = input_doc['slides'] || []
-slides.each_with_index do |slide, index|
-  basic.begin_slide(title: slide['title'])
-  slide['content'].each do |content|
-    process_content(basic, content)
-  end
-  basic.end_slide(is_final: index == slides.size - 1)
-end
-
+document = Slidebasic::Document.new(input_doc)
+document.process(basic)
 basic.print_lines
