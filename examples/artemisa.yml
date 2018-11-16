@@ -1,0 +1,77 @@
+---
+title: Artemisa MSX Computer System
+subtitle: MSX Labs - Nov. 2018
+slides:
+
+  - title: Contenido
+    content:
+      - item: ¿Qué es (y qué no) Artemisa?
+      - item: ¿Por qué Artemisa?
+      - item: Características técnicas
+      - item: Estado del proyecto
+      - item: Preguntas
+  - title: ¿Qué es (y qué no) Artemisa?
+    content:
+      - item: Ordenador de 8 bits compatible con la norma MSX-1 (otro más)
+      - item: Basado en circuitos integrados (chips de toda la vida)
+      - item: No lleva ni una sola FPGA
+      - item: Hardware como se hacía en los años 80
+  - title: ¿Por qué Artemisa?
+    content:
+      - section: Hechos
+        content:
+          - item: Todo el mundo está haciendo hardware con FPGAs
+          - item: Las FPGAs son Una Buena Cosa
+          - item: Las FPGAs son emuladores de hardware hechos con hardware
+      - section: Opiniones
+        content: 
+          - item: Las FPGAs nos alejan (un poco) del hardware original
+          - item: Es más bonito diseñar un MSX con componentes originales
+      - section: Realidades
+        content: 
+          - item: Me apetecía crear mi propio ordenador
+  - title: Características técnicas
+    content:
+      - section: Placa base
+        content:
+          - item: Tecnología CMOS compatible con TTL
+          - item: Z80 de hasta 20Mhz (reloj capado a 3.58Mhz en Mk.I)
+          - item: 64KB de RAM estática (pero sin pila, ojo)
+          - item: 32KB de ROM Flash (cableados, podría tener hasta 256KB)
+          - item: Teclado PS2
+          - item: 2 ranudas de cartucho
+          - item: 2 puertos de joystick
+          - item: Entrada y salida de cassette
+          - item: "**NO** tiene ni puerto de impresora ni serie"
+  - title: Características técnicas
+    content:
+      - section: Tarjeta gráfica independiente
+        content:
+          - item: Se comunica por un slot de expansión de bus
+          - item: Entrada de sonido desde la placa base
+          - item: GFX-9918, NTSC a 60Hz con salida S-Video
+          - item: GFX-9929, PAL a 50Hz con salida RGB (por diseñar, ¿alguien se anima?)
+          - item: GFX-9990, ... ¿quién sabe?
+  - title: Estado del proyecto
+    content:
+      - section: ¿Cómo vamos?
+        content:
+          - item: PCBs diseñadas
+          - item: Teclado probado y funcionando
+          - item: GFX-9918 probada y funcionando
+          - item: Faltan probar muuuuuchas más cosas
+      - section: ¿Y para cuando?
+        content:
+          - item: <<¡La cena estará lista cuando esté lista!>>
+      - section: ¿Y luego qué?
+        content:
+          - item: No tengo ni la más remota idea
+
+  - title: ¿Preguntas?
+    content:
+      - section: Website
+        content:
+          - item: http://github.com/apoloval/artemisa
+      - section: Twitter
+        content:
+          - item: https://twitter.com/apolovald
