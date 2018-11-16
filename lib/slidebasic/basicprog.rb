@@ -48,9 +48,9 @@ module Slidebasic
       @row_counter = add_text(row_counter, "- #{text}", margin: 2)
     end
 
-    def print_lines
+    def print_lines(file)
       @lines.each do |line|
-        print "#{line}\r\n"
+        file.print "#{line}\r\n"
       end
     end
 

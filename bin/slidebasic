@@ -4,10 +4,30 @@ require 'yaml'
 
 require 'slidebasic'
 
-input_file = ARGV[0]
-input_doc = YAML.load_file(input_file)
+def usage(error: nil)
+  puts "Error: #{error}" if error
+  puts 'slidebasic <input> <output>'
+  puts 'Where:'
+  puts '  <input>  : The input YAML file of your presentation'
+  puts '  <output> : The output Basic file to be run in your MSX computer'
+  puts ''
+  exit(error ? 1 : 0)
+end
 
+case ARGV.size
+when 0
+  usage
+when 2
+  input_file = ARGV[0]
+  output_file = ARGV[1]
+else
+  usage(error: 'invalid argument count')
+end
+
+input_doc = YAML.load_file(input_file)
+output_bas = File.new(output_file, 'w')
 basic = Slidebasic::BasicProg.new
 document = Slidebasic::Document.new(input_doc)
 document.process(basic)
-basic.print_lines
+basic.print_lines(output_bas)
+output_bas.close
